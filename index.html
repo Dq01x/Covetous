@@ -660,12 +660,12 @@ $('#tagrow').addEventListener('click',e=>{
 
 /* style-small 随机取部分文字变红 */
 (function(){
-  const el=$('#style-small'); const segs=el.textContent.split('·');
+  const el=$('#style-small'); const segs=el.textContent.split(' ');
   el.textContent='';
   segs.forEach((s,i)=>{
     const sp=document.createElement('span');
     if(Math.random()<0.36){ sp.className='rd'; }
-    sp.textContent=(i? '·':'') + s;
+    sp.textContent=(i? ' ':'') + s;
     el.appendChild(sp);
   });
 })();
@@ -704,7 +704,7 @@ musicBtn.addEventListener('click',()=>{
   else { bgm.play().then(()=>{musicOn=true;musicBtn.classList.add('playing');}).catch(()=>{}); }
 });
 /* 右上角"…"按钮：点一下显示备注 */
-$('.chat-menu-btn').addEventListener('click',()=>{ toast('备注 · 乌帕斯'); });
+$('.chat-menu-btn').addEventListener('click',()=>{ toast('备注 · 潇烬'); });
 
 /* 初始定位（放在脚本末尾，确保粒子等变量均已就绪） */
 showView('chat');
